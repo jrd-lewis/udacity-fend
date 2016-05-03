@@ -1,0 +1,56 @@
+* {
+   /* border: 1px red solid !important; */
+   font-family: "Trebuchet MS", sans-serif;
+}
+
+html,
+body,
+.container-fluid,
+.row,
+.col-sm-7,
+.col-md-8,
+#googleMap {
+   height: 97.5%;
+}
+
+body {
+   padding-top: 65px;
+}
+
+#googleMap {
+   border: 2px solid #bfbfbf;
+   border-radius: 10px;
+   box-shadow: -7px 7px 5px #aaaaaa;
+}
+
+.img-sm {
+	height: 150px;
+	width: 150px;
+}
+
+.panel-error > .panel-heading {
+  background-image: -webkit-linear-gradient(top, #a94442 0%, #a94442 100%);
+  background-image: -o-linear-gradient(top, #a94442 0%, #a94442 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a94442), to(#a94442));
+  background-image: linear-gradient(to bottom, #a94442 0%, #a94442 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa94442', endColorstr='#a94442', GradientType=0);
+}
+.panel-error {
+  border-color: #a94442;
+}
+.panel-error > .panel-heading {
+  color: #ffffff;
+  background-color: #a94442;
+  border-color: #a94442;
+}
+.panel-error > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #a94442;
+}
+.panel-error > .panel-heading .badge {
+  color: #a94442;
+  background-color: #ffffff;
+}
+.panel-error > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #a94442;
+}
