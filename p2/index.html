@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Portfolio</title>
+		<link href='https://fonts.googleapis.com/css?family=Lato:300,100' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Caveat:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<!-- Modal for Project 1 -->
+		<div class="modal fade" id="project1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h4 class="modal-title" id="myModalLabel1">Project 0: About Me</h4>
+		      </div>
+		      <div class="modal-body">
+		        <img class="img-responsive" src="img/project0.png" alt="About Me Project">
+		        This was my first project in this class. It was focused on the basics of HTML and CSS.
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- Modal for Project 2 -->
+		<div class="modal fade" id="project2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h4 class="modal-title" id="myModalLabel2">Project 1</h4>
+		      </div>
+		      <div class="modal-body">
+		        <img class="img-responsive" src="http://placehold.it/300x200?text=Project+1" alt="Placeholder Project">
+		        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- Modal for Project 3 -->
+		<div class="modal fade" id="project3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h4 class="modal-title" id="myModalLabel3">Bravo Team</h4>
+		      </div>
+		      <div class="modal-body">
+		        <img class="img-responsive" src="img/bravoSite.png" alt="Bravo Team Site">
+		        This is a personal webpage I made for a gaming community. I've lately been revising it to use the Bootstrap framework to be more mobile-friendly.
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- Container -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<!-- Picture from http://www.opensourcealternative.org/ -->
+					<img class="title-logo" src="img/lightsaber-vector.svg" alt="Placeholder">
+				</div>
+				<div class="col-md-6 text-right text-uppercase">
+					<h1 class="title-super text-thin">Jared Lewis</h1>
+					<h4>Front-end Ninja</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<img class="img-responsive" src="http://placeskull.com/1000/350/575757/3/0" alt="Skull Placeholder">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="text-muted">Featured Work</h2>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-md-4">
+					<picture>
+						<source media="(min-width: 991px)" srcset="img/project0.png">
+						<img class="img-responsive" src="img/project0-720px.png" alt="Project 0 website" data-toggle="modal" data-target="#project1">
+					</picture>
+        			<h3 class="text-uppercase">Project 0</h3>
+       				<p>http://kasts-echo.tk/project0/</p>
+				</div>
+				<div class="col-md-4">
+					<picture>
+						<source media="(min-width: 991px)" srcset="http://placehold.it/300x200?text=Project+1">
+						<img class="img-responsive" src="http://placehold.it/720x400?text=Project+1" alt="Project 1 Placeholder" data-toggle="modal" data-target="#project2">
+					</picture>
+        			<h3 class="text-uppercase">Project 1</h3>
+       				<p>http://github.com/</p>
+				</div>
+				<div class="col-md-4">
+					<picture>
+						<source media="(min-width: 991px)" srcset="img/bravoSite.png">
+						<img class="img-responsive" src="img/bravoSite-720px.png" alt="Bravo Team website" data-toggle="modal" data-target="#project3">
+					</picture>
+        			<h3 class="text-uppercase">Bravo Team</h3>
+       				<p>http://sokanbravo.tk/</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

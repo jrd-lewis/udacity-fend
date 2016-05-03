@@ -1,0 +1,51 @@
+* {
+	color: #333;
+	font-family: "Lato", sans-serif;
+	font-weight: 300;
+}
+
+body {
+	background: rgba(40, 60, 117, 0.59);
+}
+
+hr {
+	border: 2px solid #bcbbbb;
+}
+
+.text-muted {
+	color: #555;
+}
+
+.text-thin {
+	font-weight: 100;
+}
+
+.img-featured {
+	height: 200px;
+	width: 300px;
+}
+
+
+.img-full {
+	width: 100%;
+}
+
+.col-md-4 img:hover {
+	cursor:pointer;
+}
+
+.title-super {
+	color: #ca0303;
+	font-size: 60px;
+	font-family: 'Caveat', cursive;
+	font-weight: lighter;
+}
+
+.title-logo {
+	background: #cecece;
+	border: 8px solid #575757;
+	border-radius: 25px;
+	margin-top: 20px;
+	max-width: 100px;
+	min-height: 100px;
+}
