@@ -72,7 +72,7 @@ $(function() {
                 "toggles the menu's visibility when clicked",
                 function() {
                     $('.menu-icon-link').trigger('click');
-                    expect($('body').hasClass('')).toBeTruthy();
+                    expect($('body').hasClass('menu-hidden')).toBeFalsy();
                     $('.menu-icon-link').trigger('click');
                     expect($('body').hasClass('menu-hidden')).toBeTruthy();
                 });
@@ -90,7 +90,7 @@ $(function() {
          * Looks to see if there's at least one tag with the .entry class
          */
         it('load correctly', function() {
-            expect($('.entry').length).toBeGreaterThan(1);
+            expect($('.feed .entry').length).toBeGreaterThan(1);
         });
     });
 
