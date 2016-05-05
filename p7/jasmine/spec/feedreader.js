@@ -121,7 +121,7 @@ $(function() {
             expect(initialText).not.toBe('');
             expect(currentText).toBeDefined();
             expect(currentText).not.toBe('');
-            expect(initialText != currentText).toBeTruthy();
+            expect(initialText).not.toEqual(currentText);
             done();
         });
     });
