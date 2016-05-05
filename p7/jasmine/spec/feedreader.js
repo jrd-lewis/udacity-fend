@@ -23,6 +23,7 @@ $(function() {
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
+            expect(allFeeds.length).toBeGreaterThan(0);
         });
 
         /*
@@ -34,8 +35,8 @@ $(function() {
                 var url = feed.url;
                 expect(url).toBeDefined();
                 expect(url).not.toBe(null);
-                expect(typeof url).toBe(
-                    'string');
+                expect(url).not.toBe('');
+                expect(typeof url).toBe('string');
             });
         });
 
@@ -48,8 +49,8 @@ $(function() {
                 var name = feed.name;
                 expect(name).toBeDefined();
                 expect(name).not.toBe(null);
-                expect(typeof name).toBe(
-                    'string');
+                expect(name).not.toBe('');
+                expect(typeof name).toBe('string');
             });
         });
     });
@@ -70,14 +71,10 @@ $(function() {
             it(
                 "toggles the menu's visibility when clicked",
                 function() {
-                    /** Triggers the cli*/
-                    $('.menu-icon-link').trigger(
-                        'click');
+                    $('.menu-icon-link').trigger('click');
                     expect($('body').hasClass('')).toBeTruthy();
-                    $('.menu-icon-link').trigger(
-                        'click');
-                    expect($('body').hasClass(
-                        'menu-hidden')).toBeTruthy();
+                    $('.menu-icon-link').trigger('click');
+                    expect($('body').hasClass('menu-hidden')).toBeTruthy();
                 });
         });
     });
@@ -87,16 +84,13 @@ $(function() {
          * Loads the first feed asynchonously before testing it
          */
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done);
         });
         /*
          * Looks to see if there's at least one tag with the .entry class
          */
-        it('load correctly', function(done) {
-            expect($('.entry').length >= 1).toBeTruthy();
-            done();
+        it('load correctly', function() {
+            expect($('.entry').length).toBeGreaterThan(1);
         });
     });
 
@@ -110,25 +104,23 @@ $(function() {
          * Saves the current text of the first entry for later use.
          */
         beforeEach(function(done) {
-            loadFeed(1, function() {
-                done();
-            });
-            initialText = $('.entry')[0].innerHTML;
-        });
-        /*
-         * Loads the second feed asynchonously before testing it.
-         * Saves the current text of the first entry for later use.
-         */
-        afterEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+          loadFeed(1, function() {
             currentText = $('.entry')[0].innerHTML;
+            loadFeed(0, function() {
+                initialText = $('.entry')[0].innerHTML;
+                done();
+            });
+          });
+
         });
         /*
          * Compares initialText to currentText to see if they're the same.
          */
         it('changes the content correctly', function(done) {
+            expect(initialText).toBeDefined();
+            expect(initialText).not.toBe('');
+            expect(currentText).toBeDefined();
+            expect(currentText).not.toBe('');
             expect(initialText != currentText).toBeTruthy();
             done();
         });
