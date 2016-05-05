@@ -1,7 +1,6 @@
 [logo]: https://udacity.com/favicon.ico "Udacity"
 ![udacity][logo] Project 6: Neighborhood Map Proect
 ====================================
-***
 
 This site shows a list of five historic landmarks in Washington DC with markers for each on a Google map.
 
