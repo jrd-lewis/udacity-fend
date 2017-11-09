@@ -42,7 +42,7 @@
                         </div>
                         <hr class="my-2">
                         <div data-bind="foreach: filteredLocations">
-                            <button type="button" class="btn btn-link btn-block" data-bind="text: name, click: $parent.focusLoc"></button>
+                            <button type="button" class="btn btn-secondary btn-block" data-bind="text: name, click: $parent.focusLoc"></button>
                         </div>
                     </div> <!-- / card-body alert-info -->
                 </section> <!-- / card bg-primary border-primary -->
@@ -69,6 +69,6 @@
     <script src="lib/Knockout/knockout-3.4.0.js"></script>
     <!-- App -->
     <script src="js/app.min.js"></script>
-    <script async src="http://maps.googleapis.com/maps/api/js?callback=initPage" onerror="googleError()"></script>
+    <script async src="http://maps.googleapis.com/maps/api/js?callback=initPage&key=AIzaSyDNsNPzQiM9nWGuLjXYTHaWmNAR5_Iv3I0" onerror="googleError()"></script>
 </body>
 </html>
