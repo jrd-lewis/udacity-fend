@@ -29,7 +29,7 @@
     <div class="container-fluid">
         <div class="row">
             <aside class="offset-xl-1 col-xl-2 col-lg-4 col-md-5" id="locationNav">
-                <section class="card bg-primary border-primary">
+                <section class="card h-100 bg-primary border-primary">
                     <header class="text-center text-white">
                         <h1 class="h6 card-header">Locations</h1>
                     </header>
@@ -45,17 +45,17 @@
                             <button type="button" class="btn btn-secondary btn-block" data-bind="text: name, click: $parent.focusLoc"></button>
                         </div>
                     </div> <!-- / card-body alert-info -->
-                </section> <!-- / card bg-primary border-primary -->
+                </section> <!-- / card h-100 bg-primary border-primary -->
             </aside> <!-- / offset-xl-1 col-xl-2 col-lg-4 col-md-5 -->
             <article class="col-lg-8 col-md-7">
-                <section class="card bg-danger border-danger" id="error">
+                <section class="card h-100 bg-danger border-danger" id="error">
                     <header class="text-center text-white">
                         <h1 class="h6 card-header">Error while loading page</h1>
                     </header>
                     <div class="card-body alert-danger text-center">
                         Google Map could not be loaded. Please try again.
                     </div> <!-- / card-body alert-danger text-center -->
-                </section> <!-- / card bg-danger border-danger -->
+                </section> <!-- / card h-100 bg-danger border-danger -->
                 <figure>
                     <div id="googleMap"></div>
                 </figure>
