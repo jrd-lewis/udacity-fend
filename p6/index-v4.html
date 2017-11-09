@@ -1,60 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="Jared Lewis">
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/app.min.css">
-	<title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Jared Lewis">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
+    <title></title>
 </head>
 <body>
-	<header>
-		<nav class="navbar navbar-light navbar-expand-sm navbar-dark bg-dark fixed-top">
-			<a class="navbar-brand" href="#">Site Name</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navHeader" aria-controls="navHeader" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<!-- Navbar Links -->
-			<div class="collapse navbar-collapse" id="navHeader">
-				<div class="navbar-nav">
-					<a class="nav-item nav-link" href="arcade.html">Arcade Game</a>
-					<a class="nav-item nav-link active" href="#">Neighborhood Map</a>
-				</div>
-			</div>
-		</nav>
-	</header>
-	<div class="container-fluid">
-		<div class="row">
-			<aside class="offset-xl-1 col-xl-2 col-lg-4 col-md-5" id="locationNav">
-				<section class="card bg-primary border-primary">
-					<header class="text-center">
-						<h1 class="h6 card-header"></h1>
-					</header>
-					<div class="card-body alert-info">
-						<div class="input-group">
-							<input type="search" placeholder="Search..." class="form-control" data-bind="textInput: locQuery" autocomplete="off">
-							<span class="input-group-btn">
-							<button class="btn btn-default" type="button" data-bind="click: mapModel.resetMap, attr: { title: 'Reset' }"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-						</div>
-						<hr class="my-2">
-						<div data-bind="foreach: filteredLocations">
-							<button type="button" class="btn btn-default btn-block" data-bind="text: name, click: $parent.focusLoc"></button>
-						</div>
-					</div> <!-- / card-body alert-info -->
-				</section> <!-- / card bg-primary border-primary -->
-			</aside> <!-- / offset-xl-1 col-xl-2 col-lg-4 col-md-5 -->
-		</div> <!-- / row -->
-	</div> <!-- / container-fluid -->
-	<!-- Bootstrap -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
-	<!-- Knockout -->
-	<script src="lib/Knockout/knockout-3.4.0.js"></script>
-	<!-- App -->
-	<script src="js/app.min.js"></script>
-	<script async src="http://maps.googleapis.com/maps/api/js?callback=initPage" onerror="googleError()"></script>
+    <header>
+        <nav class="navbar navbar-light navbar-expand-sm navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="#">Site Name</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navHeader" aria-controls="navHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navHeader">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="arcade.html">Arcade Game</a>
+                    <a class="nav-item nav-link active" href="#">Neighborhood Map</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="offset-xl-1 col-xl-2 col-lg-4 col-md-5" id="locationNav">
+                <section class="card bg-primary border-primary">
+                    <header class="text-center">
+                        <h1 class="h6 card-header">Locations</h1>
+                    </header>
+                    <div class="card-body alert-info">
+                        <div class="input-group">
+                            <input type="search" placeholder="Search..." class="form-control" data-bind="textInput: locQuery" autocomplete="off">
+                            <span class="input-group-btn">
+                            <button class="btn btn-secondary" type="button" data-bind="click: mapModel.resetMap, attr: { title: 'Reset' }"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                        </div>
+                        <hr class="my-2">
+                        <div data-bind="foreach: filteredLocations">
+                            <button type="button" class="btn btn-secondary btn-block" data-bind="text: name, click: $parent.focusLoc"></button>
+                        </div>
+                    </div> <!-- / card-body alert-info -->
+                </section> <!-- / card bg-primary border-primary -->
+            </aside> <!-- / offset-xl-1 col-xl-2 col-lg-4 col-md-5 -->
+            <article class="col-lg-8 col-md-7">
+                <section class="card bg-danger border-danger" id="error">
+                    <header class="text-center">
+                        <h1 class="h6 card-header">Error while loading page</h1>
+                    </header>
+                    <div class="card-body alert-danger text-center">
+                        Google Map could not be loaded. Please try again.
+                    </div> <!-- / card-body alert-danger text-center -->
+                </section> <!-- / card bg-danger border-danger -->
+                <figure>
+                    <div id="googleMap"></div>
+                </figure>
+            </article> <!-- / col-lg-8 col-md-7 -->
+        </div> <!-- / row -->
+    </div> <!-- / container-fluid -->
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Knockout -->
+    <script src="lib/Knockout/knockout-3.4.0.js"></script>
+    <!-- App -->
+    <script src="js/app.min.js"></script>
+    <script async src="http://maps.googleapis.com/maps/api/js?callback=initPage" onerror="googleError()"></script>
 </body>
 </html>
