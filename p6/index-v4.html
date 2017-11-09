@@ -30,25 +30,26 @@
         <div class="row">
             <aside class="offset-xl-1 col-xl-2 col-lg-4 col-md-5" id="locationNav">
                 <section class="card bg-primary border-primary">
-                    <header class="text-center">
+                    <header class="text-center text-white">
                         <h1 class="h6 card-header">Locations</h1>
                     </header>
                     <div class="card-body alert-info">
                         <div class="input-group">
                             <input type="search" placeholder="Search..." class="form-control" data-bind="textInput: locQuery" autocomplete="off">
                             <span class="input-group-btn">
-                            <button class="btn btn-secondary" type="button" data-bind="click: mapModel.resetMap, attr: { title: 'Reset' }"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                                <button class="btn btn-secondary" type="button" data-bind="click: mapModel.resetMap, attr: { title: 'Reset' }"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                            </span>
                         </div>
                         <hr class="my-2">
                         <div data-bind="foreach: filteredLocations">
-                            <button type="button" class="btn btn-secondary btn-block" data-bind="text: name, click: $parent.focusLoc"></button>
+                            <button type="button" class="btn btn-link btn-block" data-bind="text: name, click: $parent.focusLoc"></button>
                         </div>
                     </div> <!-- / card-body alert-info -->
                 </section> <!-- / card bg-primary border-primary -->
             </aside> <!-- / offset-xl-1 col-xl-2 col-lg-4 col-md-5 -->
             <article class="col-lg-8 col-md-7">
                 <section class="card bg-danger border-danger" id="error">
-                    <header class="text-center">
+                    <header class="text-center text-white">
                         <h1 class="h6 card-header">Error while loading page</h1>
                     </header>
                     <div class="card-body alert-danger text-center">
